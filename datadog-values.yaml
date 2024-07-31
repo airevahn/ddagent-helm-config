@@ -1,0 +1,36 @@
+datadog:
+  registry: public.ecr.aws/datadog
+  site: datadoghq.com
+  tags:
+    - env:nft
+  kubelet:
+    tlsVerify: false
+  apm:
+    socketEnabled: true
+    hostSocketPath: /var/run/datadog/
+    socketPath: /var/run/datadog/apm.socket
+  # logs:
+  #   enabled: true
+  #   containerCollectAll: true
+  #   autoMultiLineDetection: true
+  securityAgent:
+    runtime:
+      enabled: true
+    compliance:
+      enabled: true
+  sbom:
+    containerImage:
+      enabled: true
+    host:
+      enabled: true
+  serviceMonitoring:
+    enabled: true
+  networkMonitoring:
+    enabled: true
+  processAgent:
+    enabled: true
+    processCollection: true
+  containerImageCollection:
+    enabled: true
+remoteConfiguration:
+  enabled: true
